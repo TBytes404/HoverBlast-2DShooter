@@ -6,7 +6,7 @@
 #endif
 
 Ship enemy, player;
-bool gameover, pause;
+bool pause, gameover = true;
 
 void resetGame(void)
 {
@@ -130,7 +130,7 @@ void drawGame(void)
 
 void updateMenu(void)
 {
-    if (IsKeyPressed(KEY_LEFT_CONTROL) || IsKeyPressed(KEY_RIGHT_CONTROL) && pause)
+    if ((IsKeyPressed(KEY_LEFT_CONTROL) || IsKeyPressed(KEY_RIGHT_CONTROL)) && pause)
         pause = false;
 
     else if (IsKeyPressed(KEY_ENTER))
@@ -169,4 +169,10 @@ void drawMenu(void)
     DrawText(changeBackgroundText, GetScreenWidth() / 2 - MeasureText(changeBackgroundText, fontSize) / 2, arenaHeight() - fontSize * -5, fontSize, ORANGE);
     DrawText(togglePauseText, GetScreenWidth() / 2 - MeasureText(togglePauseText, fontSize) / 2, arenaHeight() - fontSize * -3, fontSize, BLUE);
     DrawText(inGameKeysText, GetScreenWidth() / 2 - MeasureText(inGameKeysText, fontSize) / 2, arenaHeight() - fontSize * -7, fontSize, DARKGRAY);
+}
+
+void Game() {
+  gameover || pause 
+    ? (updateMenu(), helpDraw(drawMenu))
+    : (updateGame(), helpDraw(drawGame));
 }
