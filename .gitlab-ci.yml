@@ -1,0 +1,26 @@
+stages:
+  - build
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Building Raylib project..."
+    - mv build/hover-blast/{hover-blast,index}.html
+    - echo "Build complete!"
+  artifacts:
+    paths:
+      - build/hover-blast
+
+deploy_job:
+  stage: deploy
+  dependencies:
+    - build_job
+  script:
+    - echo "Deploying to GitLab Pages..."
+    - echo "Deployment complete!"
+  only:
+    - deploy
+  pages:
+    publish: build/hover-blast
+  

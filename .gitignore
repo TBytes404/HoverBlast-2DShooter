@@ -1,4 +1,5 @@
 .DS_Store
+!/build/hover-blast
 /build
 /.vscode
 /.cache
