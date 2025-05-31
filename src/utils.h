@@ -1,5 +1,5 @@
 #pragma once
-#include "raylib.h"
+#include <raylib.h>
 // #define DEBUG
 
 // Consts
@@ -18,6 +18,7 @@ Texture2D shotsTexture, shipTexture, shipBlastTexture, backgroundTexture;
 Sound shootSound, blastSound, getShotSound;
 
 void loadAssets(void) {
+  SetConfigFlags(FLAG_WINDOW_RESIZABLE);
   InitWindow(windowWidth, windowHeight, windowTitle);
   InitAudioDevice();
 

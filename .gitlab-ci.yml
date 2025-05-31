@@ -1,26 +1,12 @@
-stages:
-  - build
-  - deploy
-
-build_job:
-  stage: build
+pages:
+  stage: deploy
   script:
-    - echo "Building Raylib project..."
     - mv build/hover-blast/{hover-blast,index}.html
-    - echo "Build complete!"
+    - cp src/resources/Ship.png build/hover-blast
   artifacts:
     paths:
       - build/hover-blast
-
-deploy_job:
-  stage: deploy
-  dependencies:
-    - build_job
-  script:
-    - echo "Deploying to GitLab Pages..."
-    - echo "Deployment complete!"
-  only:
-    - deploy
-  pages:
-    publish: build/hover-blast
+  publish: build/hover-blast
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
   
