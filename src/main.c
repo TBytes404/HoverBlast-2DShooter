@@ -1,10 +1,6 @@
 // #define PLATFORM_WEB
 
-#if defined(PLATFORM_WEB)
-#include <emscripten.h>
-#endif
-
-#include "game.h"
+#include "menu.h"
 
 int main(void) {
   loadAssets();

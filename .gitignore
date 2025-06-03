@@ -1,5 +1,19 @@
+# Build directories
+build/
+build-*/
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
 .DS_Store
-!/build/hover-blast
-/build
-/.vscode
-/.cache
+Thumbs.db
+
+# Emscripten cache
+.emscripten_cache/
+.cache/

@@ -4,31 +4,17 @@
 
 <!--toc:start-->
 - [HoverBlast-2DShooter](#hoverblast-2dshooter)
-  - [For the Web](#for-the-web)
-    - [Requirements](#requirements)
-    - [Build](#build)
-    - [Run](#run)
+  - [Requirements](#requirements)
+  - [Build & Run](#build-run)
 <!--toc:end-->
 
-## For the Web
-
-### Requirements
+## Requirements
 
 - [emscripten](https://emscripten.org/docs/getting_started/downloads.html)
 - [CMake](https://cmake.org/download/)
 
-### Build
+## Build & Run
 
 ```sh
-mkdir build && cd build
-emcmake cmake .. -DPLATFORM=Web -DCMAKE_BUILD_TYPE=Release
-emmake make
+./scripts/build.sh help
 ```
-
-### Run
-
-```sh
-emrun hover-blast
-```
-
-then open [https://localhost:6931] on your browser.

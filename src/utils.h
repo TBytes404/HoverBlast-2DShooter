@@ -4,10 +4,19 @@
 
 // Consts
 const char windowTitle[] = "Hover Blast";
-const int windowWidth = 900, windowHeight = 800;
-const int fontSize = 24, bgSpan = 300, frameRate = 60;
-const int maxShipSpeed = 500, maxShotSpeed = 600, maxShots = 12;
-const int maxInputChars = 9, botMaxFrameDelay = 6, botMoveDirecProba = 100;
+enum {
+  windowWidth = 900,
+  windowHeight = 800,
+  fontSize = 24,
+  bgSpan = 300,
+  frameRate = 60,
+  maxShipSpeed = 500,
+  maxShotSpeed = 600,
+  maxShots = 12,
+  maxInputChars = 9,
+  botMaxFrameDelay = 6,
+  botMoveDirecProba = 100,
+};
 
 int arenaWidth(void) { return GetScreenWidth(); }
 int arenaHeight(void) { return GetScreenHeight() / 2; }
